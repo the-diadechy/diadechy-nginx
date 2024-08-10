@@ -1,5 +1,9 @@
 {
   "devDependencies": {
     "typescript": "^5.5.4"
+  },
+    "scripts": {
+    "tsc": "tsc",
+    "test": "echo \"onaho"
   }
 }
