@@ -1,17 +1,37 @@
 services:
   entelechy:
-    image: nginx
+    build:
+      #context defines either a path to a directory containing a Dockerfile
+      #, or a URL to a git repository.
+      # If not set explicitly, context defaults to project directory (.).
+      context: ./ 
+      target: build 
     volumes:
-      - type: bind
-        source: ./data
-        target: /data
-      - type: bind
-        source: ./nginx.conf
-        target: /etc/nginx/nginx.conf
+      - data:/data
+      
+  #web:
+  #  image: nginx
+  #  volumes:
+  #    - data:/data
+  #    - type: bind
+  #      source: ./nginx.conf
+  #      target: /etc/nginx/nginx.conf
+  #    
+  #  ports:
+  #    - 80:80
+  web:
+    build:
+      context: ./
+      target: production
+    volumes:
+    - data:/data
     ports:
-      # host:container ports
-      - "3000:80"
-    environment:
-      - NGINX_PORT=80
+      - 80:80
 volumes:
-  store:
+  data:
+
+
+
+
+
+
