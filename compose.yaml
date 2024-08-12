@@ -6,8 +6,8 @@ services:
       # If not set explicitly, context defaults to project directory (.).
       context: ./ 
       target: build 
-    volumes:
-      - data:/data
+    # volumes:
+    # - data:/data
       
   #web:
   #  image: nginx
@@ -23,12 +23,12 @@ services:
     build:
       context: ./
       target: production
-    volumes:
-    - data:/data
+  # volumes:
+      #- data:/data
     ports:
       - 80:80
-volumes:
-  data:
+        #volumes:
+  #data:
 
 
 
