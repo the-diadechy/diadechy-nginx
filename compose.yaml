@@ -27,11 +27,11 @@ services:
       #- data:/data
     ports:
       - 80:80
-    develop:
-      watch:
-        - action: sync
-          path: ./data
-          target: /data
+#    develop:
+#      watch:
+#        - action: sync
+#          path: ./data
+#          target: /data
         #volumes:
   #data:
 
