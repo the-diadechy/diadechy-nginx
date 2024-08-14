@@ -1,3 +1,12 @@
 .bg {
     background-color:#816A9B;
 }
+
+.header { 
+    font-size: 10em;
+    margin: 0 auto;
+    margin-top: 10px;
+    color: white;
+}
+
+
