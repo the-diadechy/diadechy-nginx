@@ -2,14 +2,40 @@
     background-color:#816A9B;
 }
 
+#logo{
+    display: inline-block;
+}
+
 .header { 
     font-size: 10em;
-    margin: 0 auto;
     margin-top: 10px;
     color: white;
+
+    font-size: 3.6em;
+    margin-right:1.4em;
 }
 
-.column {
-    margin: 50% auto;
+.column{
+    padding: 1.4em;
 }
 
+.scroller {
+    
+}
+
+#maintable{
+    display:block;
+    width:80%;
+}
+
+#maintd{
+    min-width:50%;
+    max-width:50%;
+}
+td{
+
+}
+#sidebar {
+    min-width:30%;
+    max-width:30%
+}
