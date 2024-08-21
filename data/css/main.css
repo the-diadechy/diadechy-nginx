@@ -1,5 +1,4 @@
 .bg {
-    background-color:#816A9B;
 }
 
 #logo{
@@ -7,11 +6,8 @@
 }
 
 .header { 
-    font-size: 10em;
     margin-top: 10px;
-    color: white;
 
-    font-size: 3.6em;
     margin-right:1.4em;
 }
 
@@ -25,17 +21,63 @@
 
 #maintable{
     display:block;
-    width:80%;
+    width:90%;
+    padding-left: 10em;
+    border-spacing: 30px;
 }
 
 #maintd{
-    min-width:50%;
-    max-width:50%;
+    min-width:700px;
+    max-width:600px;
+    padding: 10px;
+    
 }
-td{
 
+#maintd-container{
+    margin-left:10px;
+    display: inline-block;
+    border: 3px solid black;
+    padding: 10px;
 }
+#sidebar_container{
+    border: 3px solid black;
+    padding: 10px;
+}
+
 #sidebar {
-    min-width:30%;
-    max-width:30%
+    min-width:430px;
+    max-width:430px;
+    vertical-align: top;
+    padding:10px;
+    
+}
+#banners_container{
+	border: 3px solid;
+	margin-top: 30px;
+    padding: 10px;
+}
+
+#profile_container{
+    float: left;
+    display: inline-block;
+    margin-right:10px;
+}
+#profile {
+    padding: 40px 30px;
+    border: 3px solid black;
+}
+
+#profile_footer{
+    padding: 5px 30px;
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+}
+
+#projects_container{
+	display: inline-block;
+	border: 3px solid black;
+	margin-top: 10px;
+	margin-left: 10px;
+    padding: 10px;
 }
