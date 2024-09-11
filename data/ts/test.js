@@ -1,3 +1,5 @@
+import words from "../../words.json"
+
 "use strict";
 console.log("test");
 "use strict";
@@ -7,6 +9,6 @@ $("#click").click(function () {
     alert("Glorp was clicked.");
 });
 $("#Tennyson").click(function () {
-    console.log("clicked");
+    console.log(words);
     alert("Gwen was clicked.");
 });

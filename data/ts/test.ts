@@ -1,12 +1,23 @@
+const myRequest = new Request("../words.json");
+const array: string[] = [];
+fetch(myRequest)
+  .then((response) => response.json())
+  .then((data) => {
+    for (const word of data.words){
+    array.push(word);
+    };
+  });
+
+
 console.log("test");
  "use strict";
 console.log("test2");
-   $("#click").click(function () {
+   $("#click").on("click",function () {
        console.log("clicked2");
        alert("Glorp was clicked.");
   });
-$("#Tennyson").click(function () {
+$("#Tennyson").on("click",function () {
     console.log("clicked");
-    alert("Gwen was clicked.");
+    alert(array);
 });
 

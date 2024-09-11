@@ -1,12 +1,12 @@
 FROM node AS build
-COPY /data /data
-WORKDIR /data
-COPY package*.json .
+COPY ./ ./app
+WORKDIR /app
 RUN npm install
-RUN npm run tsc
+RUN npm run build
 
 FROM nginx AS production
-WORKDIR /data
-COPY --from=build /data /data 
+COPY --from=build /app /app 
+WORKDIR /app
 COPY nginx.conf /etc/nginx/nginx.conf
+COPY mime.types /etc/nginx/mime.types
 EXPOSE 80
