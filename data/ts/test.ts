@@ -1,7 +1,7 @@
 
-const myRequest = new Request("../words.json");
+const myRequest = new Request("../words2.txt");
 let array: string[] = [];
-
+/*
 fetch(myRequest)
     .then((response) => response.json())
     .then((data) => {
@@ -10,8 +10,11 @@ fetch(myRequest)
     array = data.words;
     })
     .then(function(){createList()});
-
-
+*/
+fetch(myRequest)
+    .then((res) => res.text())
+    .then((data) => array = data.trim().split("\n"))
+    .then(()=> createList() );
 //var list = document.getElementById("#words_list");
 //console.log("list: " + list);
 //entry.append(document.createTextNode("gwen"));
