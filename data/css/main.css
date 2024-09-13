@@ -26,6 +26,11 @@
     margin:0.4em;
 }
 
+.wordList > li:hover{
+    font-size: 2em;
+    font-weight:bold;
+}
+
 #maintable{
     display:block;
     width:90%;
