@@ -18,6 +18,13 @@
 .scroller {
     
 }
+.wordsList{
+}
+.wordList > li{
+    display:inline-block;
+    font-size: 16px;
+    margin:0.4em;
+}
 
 #maintable{
     display:block;

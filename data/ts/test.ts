@@ -1,6 +1,7 @@
 
-const myRequest = new Request("../words2.txt");
-let array: string[] = [];
+const myRequest = new Request("../words.tsv");
+let allWords: string[][] = [];
+const lists: number[] = [5,7,5];
 /*
 fetch(myRequest)
     .then((response) => response.json())
@@ -13,22 +14,58 @@ fetch(myRequest)
 */
 fetch(myRequest)
     .then((res) => res.text())
-    .then((data) => array = data.trim().split("\n"))
-    .then(()=> createList() );
+    .then((data) => { 
+        const rows = data.trim().split("\n"); 
+        const columns = rows.map(row => row.split("\t"));
+        console.log(columns);
+        allWords = columns;
+    })
+    .then(()=> {
+        
+        listMaker(lists);
+        for(const arr of allWords){
+            
+            //createList(arr);
+        }
+    }
+    );
 //var list = document.getElementById("#words_list");
 //console.log("list: " + list);
 //entry.append(document.createTextNode("gwen"));
-function createList(){
+
+function listMaker(array: number[]){
+    var listContainer = $("#words_ct");
+    for(const arr in array){
+        var list =$(`<ol class=wordList id=test${arr}>`);
+        console.log(arr)
+        listContainer.append(list); 
+        const size = array[arr];
+        let i = 0;
+        while(i < size){
+            list.append($("<li>").text(allWords[0][Math.floor(Math.random() * allWords[0].length)]));
+            i++;
+        }
+        
+        console.log(listContainer);
+    }
+};
+
+
+
+
+
+
+function createList(array: string[]){
     
     console.log("the array: " + array);     
-    console.log("is this being called");
     var list = $("#words_list");
     for (const word of array){
-        console.log("word: " + word);
-         $("#words_list").append($("<li>").text(word));
+        //console.log("word: " + word);
+        list.append($("<li>").text(word));
 
     }
-}
+};
+
 
 /*
     function getWords(obj){
@@ -53,7 +90,7 @@ console.log("test2");
   });
 $("#Tennyson").on("click",function () {
     console.log("clicked");
-    createList();
     // alert(array);
+    listMaker(lists);
 });
 
