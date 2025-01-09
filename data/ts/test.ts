@@ -32,7 +32,15 @@ fetch(myRequest)
 //var list = document.getElementById("#words_list");
 //console.log("list: " + list);
 //entry.append(document.createTextNode("gwen"));
-
+/*
+ *function listMaker Design
+parameters: (array)
+- get value inside each array
+- create <ol> element
+- <create  <li> elements based on arr.val
+- insert words into <li> elements
+ *
+ */
 function listMaker(array: number[]){
     var listContainer = $("#words_ct");
     for(const arr in array){
@@ -42,7 +50,7 @@ function listMaker(array: number[]){
         const size = array[arr];
         let i = 0;
         while(i < size){
-            list.append($("<li>").text(allWords[0][Math.floor(Math.random() * allWords[0].length)]));
+            list.append($("<li class=word>").text(allWords[0][Math.floor(Math.random() * allWords[0].length)]));
             i++;
         }
         
@@ -84,13 +92,24 @@ function createList(array: string[]){
 console.log("test");
  "use strict";
 console.log("test2");
-   $("#click").on("click",function () {
+/*$("#click").on("click",function () {
        console.log("clicked2");
        alert("Glorp was clicked.");
   });
+*/
 $("#Tennyson").on("click",function () {
     console.log("clicked");
     // alert(array);
-    listMaker(lists);
+    //listMaker(lists);
+    localStorage.clear();
+    localStorage.setItem("array",JSON.stringify(allWords));
 });
 
+$(document).on("click", ".word", function(){
+    var selectedWord = $(this);
+    console.log(selectedWord);
+    var overlay = document.createElement("div");
+    selectedWord.append(overlay);
+    console.log(overlay);
+    alert(`${selectedWord.text()} was clicked`);
+});

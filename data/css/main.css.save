@@ -19,6 +19,7 @@
 .header { 
     margin-top: 10px;
     font-size: 5em;
+
     margin-right:1.4em;
 }
 
@@ -30,9 +31,7 @@
     
 }
 .wordsList{
-
 }
- @keyframes words_ct { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } 
 
 .wordList > li{
     display:inline-block;
