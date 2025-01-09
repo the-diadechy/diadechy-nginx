@@ -1,7 +1,7 @@
 
 const myRequest = new Request("../words.tsv");
 let allWords: string[][] = [];
-const lists: number[] = [5,7,5];
+const lists: number[] = [10];
 /*
 fetch(myRequest)
     .then((response) => response.json())
@@ -66,7 +66,7 @@ function listMaker(array: number[]){
 function createList(array: string[]){
     
     console.log("the array: " + array);     
-    var list = $("#words_list");
+    var list = $("#wordList");
     for (const word of array){
         //console.log("word: " + word);
         list.append($("<li>").text(word));
@@ -97,7 +97,7 @@ console.log("test2");
        alert("Glorp was clicked.");
   });
 */
-$("#Tennyson").on("click",function () {
+$("#Ten").on("click",function () {
     console.log("clicked");
     // alert(array);
     //listMaker(lists);
@@ -112,4 +112,14 @@ $(document).on("click", ".word", function(){
     selectedWord.append(overlay);
     console.log(overlay);
     alert(`${selectedWord.text()} was clicked`);
+});
+
+
+$("#click").click(function () {
+    console.log("clicked2");
+    alert("Glorp was clicked.");
+});
+$("#Ten").click(function () {
+    console.log("clicked");
+    alert("Cat was clicked.");
 });

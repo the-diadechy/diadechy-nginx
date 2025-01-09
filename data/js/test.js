@@ -6,7 +6,7 @@ $("#click").click(function () {
     console.log("clicked2");
     alert("Glorp was clicked.");
 });
-$("#Tennyson").click(function () {
+$("#Ten").click(function () {
     console.log("clicked");
-    alert("Gwen was clicked.");
+    alert("Cat was clicked.");
 });
